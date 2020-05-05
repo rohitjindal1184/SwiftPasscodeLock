@@ -20,26 +20,26 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
     init(passcode: [String]) {
         
         passcodeToConfirm = passcode
-        title = localizedStringFor("PasscodeLockConfirmTitle", comment: "Confirm passcode title")
-        description = localizedStringFor("PasscodeLockConfirmDescription", comment: "Confirm passcode description")
+        title = localizedStringFor(key: "PasscodeLockConfirmTitle", comment: "Confirm passcode title")
+        description = localizedStringFor(key: "PasscodeLockConfirmDescription", comment: "Confirm passcode description")
     }
     
     func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
         
         if passcode == passcodeToConfirm {
             
-            lock.repository.savePasscode(passcode)
-            lock.delegate?.passcodeLockDidSucceed(lock)
+            lock.repository.savePasscode(passcode: passcode)
+            lock.delegate?.passcodeLockDidSucceed(lock: lock)
         
         } else {
             
-            let mismatchTitle = localizedStringFor("PasscodeLockMismatchTitle", comment: "Passcode mismatch title")
-            let mismatchDescription = localizedStringFor("PasscodeLockMismatchDescription", comment: "Passcode mismatch description")
+            let mismatchTitle = localizedStringFor(key: "PasscodeLockMismatchTitle", comment: "Passcode mismatch title")
+            let mismatchDescription = localizedStringFor(key: "PasscodeLockMismatchDescription", comment: "Passcode mismatch description")
             
             let nextState = SetPasscodeState(title: mismatchTitle, description: mismatchDescription)
             
-            lock.changeStateTo(nextState)
-            lock.delegate?.passcodeLockDidFail(lock)
+            lock.changeStateTo(state: nextState)
+            lock.delegate?.passcodeLockDidFail(lock: lock)
         }
     }
 }
