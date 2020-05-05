@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var passcodeLockPresenter: PasscodeLockPresenter = {
         
-        let configuration = PasscodeLockConfiguration()
+        var configuration = PasscodeLockConfiguration()
+        configuration.isTouchIDAllowed = true
         let presenter = PasscodeLockPresenter(mainWindow: self.window, configuration: configuration)
         
         return presenter

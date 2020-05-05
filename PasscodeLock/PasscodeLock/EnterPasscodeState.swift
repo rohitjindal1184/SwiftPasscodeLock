@@ -23,8 +23,8 @@ struct EnterPasscodeState: PasscodeLockStateType {
     init(allowCancellation: Bool = false) {
         
         isCancellableAction = allowCancellation
-        title = localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title")
-        description = localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description")
+        title = localizedStringFor(key: "PasscodeLockEnterTitle", comment: "Enter passcode title")
+        description = localizedStringFor(key: "PasscodeLockEnterDescription", comment: "Enter passcode description")
     }
     
     mutating func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
@@ -35,7 +35,7 @@ struct EnterPasscodeState: PasscodeLockStateType {
         
         if passcode == currentPasscode {
             
-            lock.delegate?.passcodeLockDidSucceed(lock)
+            lock.delegate?.passcodeLockDidSucceed(lock: lock)
             
         } else {
             
@@ -46,7 +46,7 @@ struct EnterPasscodeState: PasscodeLockStateType {
                 postNotification()
             }
             
-            lock.delegate?.passcodeLockDidFail(lock)
+            lock.delegate?.passcodeLockDidFail(lock: lock)
         }
     }
     
@@ -54,9 +54,9 @@ struct EnterPasscodeState: PasscodeLockStateType {
         
         guard !isNotificationSent else { return }
             
-        let center = NSNotificationCenter.defaultCenter()
+        let center = NotificationCenter.default
         
-        center.postNotificationName(PasscodeLockIncorrectPasscodeNotification, object: nil)
+        center.post(name: NSNotification.Name(rawValue: PasscodeLockIncorrectPasscodeNotification), object: nil)
         
         isNotificationSent = true
     }

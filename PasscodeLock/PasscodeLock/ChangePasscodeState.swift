@@ -17,8 +17,8 @@ struct ChangePasscodeState: PasscodeLockStateType {
     
     init() {
         
-        title = localizedStringFor("PasscodeLockChangeTitle", comment: "Change passcode title")
-        description = localizedStringFor("PasscodeLockChangeDescription", comment: "Change passcode description")
+        title = localizedStringFor(key: "PasscodeLockChangeTitle", comment: "Change passcode title")
+        description = localizedStringFor(key: "PasscodeLockChangeDescription", comment: "Change passcode description")
     }
     
     func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
@@ -31,11 +31,11 @@ struct ChangePasscodeState: PasscodeLockStateType {
             
             let nextState = SetPasscodeState()
             
-            lock.changeStateTo(nextState)
+            lock.changeStateTo(state: nextState)
             
         } else {
             
-            lock.delegate?.passcodeLockDidFail(lock)
+            lock.delegate?.passcodeLockDidFail(lock: lock)
         }
     }
 }
