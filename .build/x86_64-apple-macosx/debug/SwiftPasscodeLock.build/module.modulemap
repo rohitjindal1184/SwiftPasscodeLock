@@ -1,0 +1,4 @@
+module SwiftPasscodeLock {
+    header "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock-Swift.h"
+    requires objc
+}

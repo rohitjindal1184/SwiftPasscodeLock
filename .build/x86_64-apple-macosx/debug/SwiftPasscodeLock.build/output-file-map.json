@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/master.swiftdeps"
+  },
+  "/Users/bitch/Desktop/SwiftPasscodeLock/Sources/SwiftPasscodeLock/SwiftPasscodeLock.swift": {
+    "dependencies": "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock.d",
+    "object": "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock.swift.o",
+    "swiftmodule": "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock~partial.swiftmodule",
+    "swift-dependencies": "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock.swiftdeps"
+  }
+}
