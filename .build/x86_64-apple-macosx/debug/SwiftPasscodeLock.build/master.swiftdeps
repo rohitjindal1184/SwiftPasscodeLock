@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
+options: "718f7e95137096853de380c4e6426e03"
+build_time: [1624701963, 453747000]
+inputs:
+  "/Users/bitch/Desktop/SwiftPasscodeLock/Sources/SwiftPasscodeLock/SwiftPasscodeLock.swift": [1624700064, 738497679]

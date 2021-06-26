@@ -1,0 +1,78 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "SwiftPasscodeLock-debug.module": ["<SwiftPasscodeLock-debug.module>"]
+  "SwiftPasscodeLockPackageTests-debug.test": ["<SwiftPasscodeLockPackageTests-debug.test>"]
+  "SwiftPasscodeLockTests-debug.module": ["<SwiftPasscodeLockTests-debug.module>"]
+  "main": ["<SwiftPasscodeLock-debug.module>"]
+  "test": ["<SwiftPasscodeLock-debug.module>","<SwiftPasscodeLockPackageTests-debug.test>","<SwiftPasscodeLockTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/bitch/Desktop/SwiftPasscodeLock/Sources/SwiftPasscodeLock/":
+    is-directory-structure: true
+  "/Users/bitch/Desktop/SwiftPasscodeLock/Tests/SwiftPasscodeLockTests/":
+    is-directory-structure: true
+commands:
+  "<SwiftPasscodeLock-debug.module>":
+    tool: phony
+    inputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock.swift.o","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.swiftmodule"]
+    outputs: ["<SwiftPasscodeLock-debug.module>"]
+
+  "<SwiftPasscodeLockPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockPackageTests.xctest/Contents/MacOS/SwiftPasscodeLockPackageTests"]
+    outputs: ["<SwiftPasscodeLockPackageTests-debug.test>"]
+
+  "<SwiftPasscodeLockTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.build/SwiftPasscodeLockTests.swift.o","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.swiftmodule"]
+    outputs: ["<SwiftPasscodeLockTests-debug.module>"]
+
+  "C.SwiftPasscodeLock-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/Sources/SwiftPasscodeLock/SwiftPasscodeLock.swift"]
+    outputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock.swift.o","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "SwiftPasscodeLock"
+    module-output-path: "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.swiftmodule"
+    import-paths: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build"
+    objects: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-emit-objc-header","-emit-objc-header-path","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock-Swift.h","-color-diagnostics"]
+    sources: ["/Users/bitch/Desktop/SwiftPasscodeLock/Sources/SwiftPasscodeLock/SwiftPasscodeLock.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "C.SwiftPasscodeLockPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.build/SwiftPasscodeLock.swift.o","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.build/SwiftPasscodeLockTests.swift.o"]
+    outputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockPackageTests.xctest/Contents/MacOS/SwiftPasscodeLockPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/SwiftPasscodeLockPackageTests.xctest/Contents/MacOS/SwiftPasscodeLockPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug","-o","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockPackageTests.xctest/Contents/MacOS/SwiftPasscodeLockPackageTests","-module-name","SwiftPasscodeLockPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx","-target","x86_64-apple-macosx10.15","-Xlinker","-add_ast_path","-Xlinker","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.swiftmodule","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.SwiftPasscodeLockTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/Tests/SwiftPasscodeLockTests/SwiftPasscodeLockTests.swift","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLock.swiftmodule"]
+    outputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.build/SwiftPasscodeLockTests.swift.o","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "SwiftPasscodeLockTests"
+    module-output-path: "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.swiftmodule"
+    import-paths: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.build"
+    objects: ["/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/SwiftPasscodeLockTests.build/SwiftPasscodeLockTests.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.15","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/bitch/Desktop/SwiftPasscodeLock/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-color-diagnostics"]
+    sources: ["/Users/bitch/Desktop/SwiftPasscodeLock/Tests/SwiftPasscodeLockTests/SwiftPasscodeLockTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/bitch/Desktop/SwiftPasscodeLock/Sources/SwiftPasscodeLock/","/Users/bitch/Desktop/SwiftPasscodeLock/Tests/SwiftPasscodeLockTests/","/Users/bitch/Desktop/SwiftPasscodeLock/Package.swift","/Users/bitch/Desktop/SwiftPasscodeLock/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
